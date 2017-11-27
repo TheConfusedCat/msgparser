@@ -32,7 +32,7 @@ public class OutlookFileAttachment implements OutlookAttachment {
 	private long size = -1;
 
 	/**
-	 * The size of the attachment.
+	 * The content ID of the attachment.
 	 */
 	private String contentId;
 
