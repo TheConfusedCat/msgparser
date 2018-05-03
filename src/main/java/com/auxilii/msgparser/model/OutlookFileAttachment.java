@@ -32,6 +32,11 @@ public class OutlookFileAttachment implements OutlookAttachment {
 	private long size = -1;
 
 	/**
+	 * The content ID of the attachment.
+	 */
+	private String contentId;
+
+	/**
 	 * Sets the property specified by the name parameter. Unknown names are ignored.
 	 */
 	public void setProperty(final OutlookMessageProperty msgProp) {
@@ -55,6 +60,9 @@ public class OutlookFileAttachment implements OutlookAttachment {
 					break;
 				case "3703":
 					setExtension((String) value);
+					break;
+				case "3712":
+					setContentId((String) value);
 					break;
 				default:
 					// don't do anything, currently I don't even know if this is a functionally legal state
@@ -153,5 +161,20 @@ public class OutlookFileAttachment implements OutlookAttachment {
 	 */
 	private void setSize(final long size) {
 		this.size = size;
+	}
+
+	/**
+	 * Bean getter for {@link #contentId}.
+	 */
+	@SuppressWarnings("ElementOnlyUsedFromTestCode")
+	public String getContentId() {
+		return contentId;
+	}
+
+	/**
+	 * Bean setter for {@link #contentId}.
+	 */
+	private void setContentId(final String contentId) {
+		this.contentId = contentId;
 	}
 }
